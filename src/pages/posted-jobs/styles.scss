@@ -41,6 +41,9 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  img {
+    width: 100px;
+  }
 }
 
 .postedJobs__cardsContainer {

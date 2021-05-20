@@ -11,15 +11,13 @@ import {
 import { requestAppliedJobs } from "../../redux/candidate/action";
 import "./styles.scss";
 
-const AppliedJobs = (props) => {
-  const {
-    loading,
-    appliedJobs,
-    appliedJobsCount,
-    appliedJobsFetchError,
-    getAppliedJobs,
-  } = props;
+import EmptyLogo from "../../assets/empty.svg";
+import { useHistory } from "react-router";
 
+const AppliedJobs = (props) => {
+  const { loading, appliedJobs, appliedJobsFetchError, getAppliedJobs } = props;
+
+  const history = useHistory();
   // ******************************* States *****************************
 
   // ******************************* useEffect ****************************
@@ -39,19 +37,23 @@ const AppliedJobs = (props) => {
 
           <h2>Jobs applied by you</h2>
           {loading ? (
-            <div className="availableJobs__spinnerContainer">
+            <div className="appliedJobs__spinnerContainer">
               <Spinner color="secondary" size="medium" />
             </div>
           ) : appliedJobsFetchError ? (
-            <div className="availableJobs__spinnerContainer">
+            <div className="appliedJobs__spinnerContainer">
               <p>Applied Jobs fetching Failed!</p>
               <Button onClick={() => getAppliedJobs({ page: 1 })}>Retry</Button>
             </div>
           ) : (
             <div className="appliedJobs__cardsContainer">
               {appliedJobs?.length === 0 ? (
-                <div className="postedJobs__noContentContainer">
-                  <p>Applied jobs will show here!</p>
+                <div className="appliedJobs__noContentContainer">
+                  <img src={EmptyLogo} alt="empty" />
+                  <p>Your applied jobs will show here!</p>
+                  <Button onClick={() => history.push("/home")}>
+                    See all jobs
+                  </Button>
                 </div>
               ) : (
                 appliedJobs?.map((item, index) => (

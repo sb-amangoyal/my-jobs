@@ -14,6 +14,7 @@ import {
   requestApplyJob,
   requestAvailableJobs,
 } from "../../redux/candidate/action";
+import EmptyLogo from "../../assets/empty.svg";
 import "./styles.scss";
 
 const AvailableJobs = (props) => {
@@ -91,6 +92,7 @@ const AvailableJobs = (props) => {
             <div className="availableJobs__cardsContainer">
               {availableJobsCount === 0 ? (
                 <div className="postedJobs__noContentContainer">
+                  <img src={EmptyLogo} alt="empty" />
                   <p>Available jobs will show here!</p>
                 </div>
               ) : (
@@ -109,16 +111,18 @@ const AvailableJobs = (props) => {
           )}
         </div>
 
-        <div className="availableJobs__paginationContainer">
-          <Pagination
-            pageCount={
-              availableJobsCount % 20 === 0
-                ? parseInt(availableJobsCount / 20)
-                : parseInt(availableJobsCount / 20) + 1
-            }
-            onPageChange={handlePaginationChange}
-          />
-        </div>
+        {availableJobsCount !== 0 && (
+          <div className="availableJobs__paginationContainer">
+            <Pagination
+              pageCount={
+                availableJobsCount % 20 === 0
+                  ? parseInt(availableJobsCount / 20)
+                  : parseInt(availableJobsCount / 20) + 1
+              }
+              onPageChange={handlePaginationChange}
+            />
+          </div>
+        )}
       </div>
 
       {openDialog && (

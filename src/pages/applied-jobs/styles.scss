@@ -26,6 +26,30 @@
   gap: 20px;
 }
 
+.appliedJobs__spinnerContainer {
+  width: 100%;
+  height: calc(100vh - 300px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.appliedJobs__noContentContainer {
+  width: 100%;
+  height: calc(100vh - 300px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  img {
+    width: 100px;
+  }
+}
+
 .appliedJobs__dialogContent {
   display: flex;
   flex-direction: column;

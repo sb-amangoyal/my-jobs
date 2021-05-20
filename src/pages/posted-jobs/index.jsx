@@ -15,6 +15,7 @@ import {
   requestJobApplicants,
   requestPostedJobs,
 } from "../../redux/recruiter/action";
+import EmptyLogo from "../../assets/empty.svg";
 import "./styles.scss";
 
 const PostedJobs = (props) => {
@@ -78,6 +79,7 @@ const PostedJobs = (props) => {
             <div className="postedJobs__cardsContainer">
               {postedJobsCount === 0 ? (
                 <div className="postedJobs__noContentContainer">
+                  <img src={EmptyLogo} alt="empty" />
                   <p>Your posted jobs will show here!</p>
                   <Button onClick={() => history.push("/post-job")}>
                     Post a Job
@@ -99,16 +101,18 @@ const PostedJobs = (props) => {
           )}
         </div>
 
-        <div className="postedJobs__paginationContainer">
-          <Pagination
-            pageCount={
-              postedJobsCount % 20 === 0
-                ? parseInt(postedJobsCount / 20)
-                : parseInt(postedJobsCount / 20) + 1
-            }
-            onPageChange={handlePaginationChange}
-          />
-        </div>
+        {postedJobsCount !== 0 && (
+          <div className="postedJobs__paginationContainer">
+            <Pagination
+              pageCount={
+                postedJobsCount % 20 === 0
+                  ? parseInt(postedJobsCount / 20)
+                  : parseInt(postedJobsCount / 20) + 1
+              }
+              onPageChange={handlePaginationChange}
+            />
+          </div>
+        )}
       </div>
 
       {openDialog && (
