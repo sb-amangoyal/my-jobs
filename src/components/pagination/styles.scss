@@ -1,0 +1,61 @@
+@import "/src/styles/constants/colors.scss";
+
+.pagination {
+  display: flex;
+  list-style: none;
+  outline: none;
+
+  & .next,
+  .previous {
+    background-color: $bgBlue;
+    border: 1px solid #7b829a;
+    a {
+      color: #7b829a;
+    }
+  }
+
+  & .next.disabled,
+  .previous.disabled {
+    a {
+      color: #b3bccd;
+    }
+  }
+}
+
+.pagination > li > a {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  padding: auto;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination > li {
+  margin: 0 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #43afff33;
+  display: flex;
+  border: 1px solid $skyBlue;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination > .active {
+  border: none;
+  outline: none;
+}
+.pagination > li > a,
+.pagination > li > span {
+  color: $lightPurple;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span,
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-radius: unset;
+}

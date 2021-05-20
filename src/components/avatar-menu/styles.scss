@@ -1,0 +1,77 @@
+@import "/src/styles/constants/colors.scss";
+
+.avatarMenu {
+  position: relative;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 5px;
+  cursor: pointer;
+}
+
+.avatar__circle {
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  background-color: $avatar;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    color: $lightPurple;
+    font-size: 18px;
+  }
+}
+
+.avatar__menuIcon {
+  width: 20px;
+  img {
+    max-width: 100%;
+  }
+}
+
+.menu {
+  position: absolute;
+  min-width: 110px;
+  display: none;
+  border-radius: 5px;
+  background-color: white;
+  padding: 12px 0;
+  margin-top: 10px;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    padding: 2px 14px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $avatar;
+    }
+  }
+}
+
+.menu::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 10px;
+  margin-left: -5px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+.menu.show-menu {
+  display: block;
+}

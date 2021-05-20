@@ -1,0 +1,175 @@
+@import "/src/styles/shared/background.scss";
+@import "/src/styles/constants/responsive.scss";
+
+.postedJobs {
+  @extend %background;
+
+  &::before {
+    height: 240px;
+  }
+}
+.postedJobs__mainContainer {
+  @extend %mainContainer;
+}
+
+.postedJobs__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+
+  & > h2 {
+    margin: 30px 0 24px;
+    color: white;
+  }
+}
+
+.postedJobs__spinnerContainer {
+  width: 100%;
+  height: calc(100vh - 300px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.postedJobs__noContentContainer {
+  width: 100%;
+  height: calc(100vh - 300px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.postedJobs__cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.postedJobs__paginationContainer {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.postedJobs__dialogContent {
+  height: 100%;
+  min-height: 400px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  & > p {
+    margin: 10px 0;
+    line-height: 17px;
+  }
+}
+
+.postedJobs__dialogSpinnerContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.postedJobs__dialogNoContentContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: #a9afbc, $alpha: 0.2);
+  border-radius: 10px;
+}
+
+.postedJobs__applicantsContainer {
+  flex: 1;
+  background-color: rgba($color: #a9afbc, $alpha: 0.2);
+  padding: 8px;
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 160px;
+  grid-gap: 20px;
+}
+
+.postedJobs__applicantCard {
+  width: 100%;
+  height: 160px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #303f6080;
+}
+
+.postedJobs__userDataContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.postedJobs__avatar {
+  height: 50px;
+  width: 50px;
+  background-color: #d9efff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.postedJobs__nameEmail,
+.postedJobs__skillsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  b {
+    line-height: 16px;
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    opacity: 80%;
+  }
+}
+
+.dialogContent__nameEmail {
+  b {
+    line-height: 16px;
+    font-size: 1.5rem;
+  }
+}
+
+@include up-to(620px) {
+  .postedJobs__cardsContainer {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .postedJobs__applicantsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@include up-to($phone-landscape) {
+  .postedJobs__content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 340px) {
+  .postedJobs__applicantCard {
+    padding: 8px;
+  }
+}

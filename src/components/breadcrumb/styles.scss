@@ -1,0 +1,21 @@
+@import "/src/styles/constants/fonts.scss";
+
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  opacity: 80%;
+
+  & > img {
+    width: 15px;
+  }
+
+  a {
+    color: white;
+  }
+
+  p {
+    font-family: $font-medium;
+    color: white;
+  }
+}

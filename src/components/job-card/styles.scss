@@ -1,0 +1,66 @@
+@import "/src/styles/constants/colors.scss";
+@import "/src/styles/constants/fonts.scss";
+
+.jobCard {
+  width: 260px;
+  height: 200px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  overflow: hidden;
+  box-shadow: 0px 3px 6px $boxShadow;
+  h3 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: $lightPurple;
+    line-height: 20px;
+    font-size: 1.7rem;
+    font-family: $font-main;
+  }
+  p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    opacity: 80%;
+    line-height: 16px;
+    font-size: 1.4rem;
+  }
+}
+
+.jobCard__actionContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.jobCard__locationContainer {
+  max-width: 40%;
+  display: flex;
+  img {
+    width: 15px;
+  }
+  p {
+    margin-left: 5px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.jobCard__buttonContainer {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+}

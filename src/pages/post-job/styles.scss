@@ -1,0 +1,48 @@
+@import "/src/styles/constants/colors.scss";
+@import "/src/styles/constants/fonts.scss";
+@import "/src/styles/constants/responsive.scss";
+@import "/src/styles/shared/background.scss";
+
+.postJob {
+  @extend %background;
+}
+
+.postJob__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+}
+
+.postJob__formCard {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 20px;
+  background-color: white;
+  margin: 100px auto 0;
+  padding: 30px;
+  box-shadow: 0px 30px 36px $boxShadow;
+
+  & > h2 {
+    margin-bottom: 30px;
+  }
+}
+
+.postJob__formInputWrapper {
+  margin-top: 20px;
+}
+
+.postJob__formActionWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.postJob__createAccountLinkWrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.availableJobs__dialogContent {
+  padding: 16px;
+}

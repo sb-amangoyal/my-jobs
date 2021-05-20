@@ -1,0 +1,33 @@
+@import "/src/styles/constants/colors.scss";
+@import "/src/styles/constants/fonts.scss";
+@import "/src/styles/constants/responsive.scss";
+
+.headerLink {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  & > a {
+    color: white;
+    text-align: center;
+    font-family: $font-main;
+  }
+}
+
+.headerLink__ActiveBar {
+  width: 50px;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  background-color: $skyBlue;
+}
+
+@include up-to($phone-landscape) {
+  .headerLink {
+    transform: translateX(-50%);
+  }
+}

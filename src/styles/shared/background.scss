@@ -1,0 +1,32 @@
+@import "/src/styles/constants/colors.scss";
+
+%background {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $bgBlue;
+
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 450px;
+    background: transparent
+      linear-gradient(248deg, $lightPurple 0%, $darkPurple 100%) 0% 0% no-repeat
+      padding-box;
+    z-index: 0;
+  }
+
+  %mainContainer {
+    position: relative;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 0 50px;
+  }
+}

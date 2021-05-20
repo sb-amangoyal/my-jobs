@@ -1,0 +1,42 @@
+@import "/src/styles/constants/colors.scss";
+@import "/src/styles/constants/fonts.scss";
+
+.inputLabelContainer {
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    font-family: $font-medium;
+    font-size: 1.4rem;
+  }
+}
+
+.input {
+  background-color: $inputBackground;
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  border: 2px solid $inputBorder;
+  margin-top: 5px;
+  color: $lightPurple;
+
+  &:focus {
+    outline-color: $skyBlue;
+  }
+}
+
+.input--invalid {
+  outline-color: $error;
+  border-color: $error;
+  outline: none;
+}
+
+.inputErrorContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+  p {
+    color: $error;
+  }
+}

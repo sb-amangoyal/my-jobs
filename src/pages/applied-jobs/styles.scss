@@ -1,0 +1,137 @@
+@import "/src/styles/shared/background.scss";
+@import "/src/styles/constants/responsive.scss";
+
+.appliedJobs {
+  @extend %background;
+
+  &::before {
+    height: 240px;
+  }
+}
+
+.appliedJobs__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+
+  & > h2 {
+    margin: 30px 0 24px;
+    color: white;
+  }
+}
+
+.appliedJobs__cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.appliedJobs__dialogContent {
+  display: flex;
+  flex-direction: column;
+
+  & > p {
+    margin: 10px 0;
+    line-height: 17px;
+  }
+}
+
+.dialogContent__applicantsContainer {
+  max-height: 480px;
+  background-color: rgba($color: #a9afbc, $alpha: 0.2);
+  padding: 8px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  overflow-y: scroll;
+  scroll-margin-right: 5px;
+  scroll-margin-left: 5px;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 18px;
+    background: #fff;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #fff;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #a9afbc;
+    border-radius: 10px;
+    border: 4px solid white;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #999;
+  }
+}
+
+.dialogContent__applicantCard {
+  width: 278px;
+  height: 160px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #303f6080;
+}
+
+.dialogContent__userDataContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dialogContent__avatar {
+  height: 50px;
+  width: 50px;
+  background-color: #d9efff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialogContent__nameEmail,
+.dialogContent__skillsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  b {
+    line-height: 16px;
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    opacity: 80%;
+  }
+}
+
+.dialogContent__nameEmail {
+  b {
+    line-height: 16px;
+    font-size: 1.5rem;
+  }
+}
+
+@include up-to(620px) {
+  .appliedJobs__cardsContainer {
+    justify-content: center;
+  }
+}
+@include up-to($phone-landscape) {
+  .appliedJobs__content {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,81 @@
+@import "./constants/colors.scss";
+@import "./constants/fonts.scss";
+@import "./constants/responsive.scss";
+
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font: 62.5% $font-main;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: $font-bold;
+  font-size: 4rem;
+  line-height: 74px;
+  color: $lightPurple;
+}
+
+h2 {
+  font-family: $font-medium;
+  font-size: 2.4rem;
+  color: $lightPurple;
+}
+
+h3 {
+  font-family: $font-medium;
+  font-size: 2.2rem;
+  color: $lightPurple;
+  line-height: 27px;
+}
+
+p,
+span,
+label,
+li {
+  font-family: $font-main;
+  font-size: 1.4rem;
+  color: $lightPurple;
+  line-height: 20px;
+}
+
+label {
+  font-family: $font-medium;
+}
+
+b {
+  font-family: $font-medium;
+  font-size: 1.4rem;
+  color: $lightPurple;
+}
+
+a {
+  font-family: $font-medium;
+  font-size: 1.4rem;
+  color: $skyBlue;
+  text-decoration: none;
+}
+
+button {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@include up-to($tablet-large) {
+  // *,
+  // *::before,
+  // *::after {
+  //   font-size: 60%;
+  // }
+}

@@ -1,0 +1,26 @@
+@import "../../styles/constants/colors.scss";
+
+.button {
+  min-width: 120px;
+  padding: 10px 16px;
+  color: white;
+  outline: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: $skyBlue;
+  border: 1px solid $skyBlue;
+  &:disabled {
+    cursor: auto;
+  }
+}
+
+.button--outlined {
+  background-color: $outlinedBtnBackground;
+}
+
+.button--secondary {
+  background-color: #43afff33;
+  color: $lightPurple;
+  border: none;
+}

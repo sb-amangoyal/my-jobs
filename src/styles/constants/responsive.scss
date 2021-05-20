@@ -1,0 +1,17 @@
+$phone-landscape: 578px;
+$tablet-small: 780px;
+$tablet-medium: 849px;
+$tablet-large: 1024px;
+$desktop-large: 1440px;
+
+@mixin up-from($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin up-to($size) {
+  @media (max-width: #{$size}) {
+    @content;
+  }
+}

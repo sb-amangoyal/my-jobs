@@ -1,0 +1,52 @@
+@import "/src/styles/constants/colors.scss";
+@import "/src/styles/constants/fonts.scss";
+@import "/src/styles/constants/responsive.scss";
+@import "/src/styles/shared/background.scss";
+
+.resetPassword {
+  @extend %background;
+}
+
+.resetPassword__formCard {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 20px;
+  background-color: white;
+  margin: 100px auto 0;
+  padding: 30px;
+  box-shadow: 0px 30px 36px $boxShadow;
+
+  & > h3 {
+    margin-bottom: 20px;
+  }
+  & > p {
+    margin-bottom: 30px;
+  }
+}
+
+.resetPassword__spinnerContainer {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resetPassword__linkExpireContainer {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.resetPassword__formInputWrapper {
+  margin-top: 20px;
+}
+
+.resetPassword__formActionWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
