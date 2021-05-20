@@ -51,7 +51,7 @@ const AppliedJobs = (props) => {
             <div className="appliedJobs__cardsContainer">
               {appliedJobs?.length === 0 ? (
                 <div className="postedJobs__noContentContainer">
-                  <p>Apllied jobs will show here!</p>
+                  <p>Applied jobs will show here!</p>
                 </div>
               ) : (
                 appliedJobs?.map((item, index) => (
